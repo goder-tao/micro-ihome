@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package sms;
+
+option go_package = "./proto;sms";
+
+service Sms {
+	rpc SendSms(SmsRequest) returns (SmsResponse) {}
+}
+
+message SmsRequest {
+	string phone = 1;
+}
+
+message SmsResponse {
+	string errmsg = 1;
+}

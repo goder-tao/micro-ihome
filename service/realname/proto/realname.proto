@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package realname;
+
+option go_package = "./proto;realname";
+
+service Realname {
+	rpc AuthRealName(RealNameRequest) returns (RealNameResponse) {}
+}
+
+message RealNameRequest {
+	string realname = 1;
+	string IdNumber = 2;
+}
+
+message RealNameResponse {
+	string errmsg = 1;
+}

@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package avatar;
+
+option go_package = "./proto;avatar";
+
+service Avatar {
+	rpc SaveBuffer(AvatarRequest) returns (AvatarResponse) {}
+}
+
+message AvatarRequest {
+	bytes buf = 1;
+	string exeName = 2;
+}
+
+message AvatarResponse {
+	string fileID = 1;
+	string err = 2;
+}

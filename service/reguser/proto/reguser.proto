@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package reguser;
+
+option go_package = "./proto;reguser";
+
+service Reguser {
+	rpc RegisterUser(RegisterRequest) returns (RegisterResponse) {}
+}
+
+message RegisterRequest {
+	string phone = 1;
+	string SmsInput = 2;
+	string password = 3;
+}
+
+message RegisterResponse {
+	string errmsg = 1;
+}

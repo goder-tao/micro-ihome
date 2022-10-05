@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package captcha;
+
+option go_package = "./proto;captcha";
+
+service Captcha {
+	rpc GetCaptcha(Request) returns (Response) {}
+}
+
+
+message Request {
+}
+
+message Response {
+	// 使用json序列化和反序列化image对象
+	bytes data = 1;
+	string code = 2;
+}
+
